@@ -1,18 +1,12 @@
-class Dragon():
-
- def __init__(self):
-    self.name = ''
-    self.hp = 100
-    self.atk = 15
-
+from model import dragon
 import random
 
 if __name__ == '__main__': 
-  player1 = Dragon()
+  player1 = dragon.Dragon()
   print('Digite o nome de seu personagem')
   player1.name = raw_input()
   print('------------------------------')
-  enemy = Dragon()
+  enemy = dragon.Dragon()
   enemy.name = 'enemy'
   
   print('Sua batalha vai comecar, voce enfrentara um inimigo')

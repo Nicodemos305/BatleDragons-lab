@@ -24,11 +24,23 @@ class Game:
         return random.randint(1, value)
 
     def who_is_chanpion(self, hp1, hp2):
-        if hp1 <= 0:
+        if hp1 < hp2 and hp1 <= 0:
             print 'Voce tombou'
-        if hp2 <= 0:
+        elif hp2 < hp1 and hp2 <= 0:
             print 'O inimigo tombou'
 
     def show_hero_damage(self, name_hero_atack, damage, name_hero_damage):
-        print 'O heroi ' + name_hero_atack + ' atacou o heroi ' + name_hero_damage
-        print 'O heroi ' + name_hero_damage + ' recebeu ' + str(damage) + ' de dano'
+        print 'O heroi {} atacou o heroi {}'.format(name_hero_atack, name_hero_damage)
+        print 'O heroi {} recebeu {} de dano'.format(name_hero_damage, str(damage))
+
+    def born_enemy(self):
+        enemy = dragon.Dragon().born_dragon('enemy', "3")
+        print enemy.name + ' entrou no combate'
+        print 'Sua batalha vai comecar, voce enfrentara um inimigo'
+        return enemy
+
+    def your_phase(self, name):
+        print 'Sua vez de atacar {}'.format(name)
+
+    def calc_atack_damage(self, hp, damage):
+        return hp - damage

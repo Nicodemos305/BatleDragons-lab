@@ -25,5 +25,3 @@ class Dragon:
            self.set_status(15, 100)
            self.status_dragon(self.name, self.atk, self.hp, "comun")
         return self
-
-
